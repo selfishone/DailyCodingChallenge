@@ -9,7 +9,7 @@ public class Problem10 {
        //A separate thread for just calling the functions asynchronously, no need of creating new threads for each scheduling call
         Thread t = new Thread(fun);
         t.sleep(n);
-        t.run();
+        t.start();
     }
 
     // If being asynchronous is not a problem we can use current thread insted of creating new thread??
