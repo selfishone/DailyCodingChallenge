@@ -69,6 +69,8 @@ class LogFile2{
         this.capacity = i ;
     }
     // We can solve the problem using a circular buffer.
+    //No more need to move all the elements by one space when inserting a new order to a full list
+
     public void record(String orderId){
         //When ever a new insertion to a full list happens remove the current oldest item in the list.
         /* Algorithm is:
