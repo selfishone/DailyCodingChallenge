@@ -35,6 +35,7 @@ public class Problem16 {
     }
 }
 
+//This impllementation is not so efficient with time it takes O(N) to insert into a full list.
 class LogFile{
 
     private List<String> orderList = new ArrayList<>();
