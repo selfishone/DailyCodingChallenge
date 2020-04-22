@@ -16,6 +16,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Problem17 {
+    /*
+    * Algorithm:
+    * 1. Construct the Directory Object
+    * 2. Traverse through the object and
+    * */
 
     //TODO: Write a proper print function to print directory structure? --> Means convertinf DataStructure back into String and printing it.
     public static void main(String args[]){
@@ -123,9 +128,6 @@ class FileSystem{
         }
         return longest;
     }
-    public void printFileSystem(){
-        base.print();
-    }
 }
 
 class Item {
@@ -141,17 +143,6 @@ class Item {
     public boolean isFile(){
         if(name.contains("."))return true;
         return false;
-    }
-
-    public void print(){
-        if(subItems.isEmpty()){
-            System.out.println(name);
-        }else{
-            System.out.print('\t');
-            for(Item i: subItems){
-                i.print();
-            }
-        }
     }
 
 }
