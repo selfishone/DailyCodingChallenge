@@ -123,8 +123,7 @@ class FileSystem{
         findAllFilePaths("",base);
         String longest = "";
         for(String str: filePaths){
-            if(str.length()>longest.length())
-                longest=str;
+            if(str.length()>longest.length())                longest=str;
         }
         return longest;
     }

@@ -39,6 +39,8 @@ public class Problem2 {
         //Way to initialize an array of a certain size.
         List<Integer> suffixList = new ArrayList(Arrays.asList(new Integer[numbers.size()]));
         List<Integer> result = new ArrayList<>();
+
+        //TODO: Try to compute the two for Loops Asynchronously or parallely.
         for(int i = 0; i<numbers.size(); i++){
             if(i==0)prefixList.add(1);
             else {

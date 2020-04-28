@@ -1,5 +1,7 @@
 import java.util.Arrays;
 
+//Time complexity to find maximum of a given subArray
+
 public class SegmentTree {
    int[] tree;
    //What does i-th element of this segment tree tell us: Nothing, we dont know what is the left and right based on index in the array

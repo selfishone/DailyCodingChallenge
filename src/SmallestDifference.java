@@ -24,13 +24,41 @@ public class SmallestDifference {
         for(int i=0; i< line2.length; i++){
             arr2[i] = Integer.parseInt(line2[i]);
         }
-        int[] result = smallestDifference(arr1, arr2);
+        int[] result = smallestPair2(arr1, arr2);
         System.out.println(Arrays.toString(result));
 
     }
 
+    /*
+        Array manipulation without using BinarySearch type algo, but still making use of sorted array Properties.
+     */
+    public static int[] smallestPair2(int[] arr1, int[] arr2){
 
-//Brute force method O(N*N) time complexity
+        int i =0; //Pointer to 1st sorted array
+        int j = 0; //Pointer to the 2nd Sorted array
+        int diff = Math.abs(arr1[i]-arr2[j]);
+        int[] result = new int[2];
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        while(i< arr1.length && j < arr2.length){
+            int num1 = arr1[i];
+            int num2 = arr2[j];
+            int curr_diff =Math.abs(arr1[i]-arr2[j]);
+            if(arr1[i]<arr2[j]){
+                i++;
+            }else if(arr2[j]<arr1[i]){
+                j++;
+            }
+            if(curr_diff<diff){
+                diff = curr_diff;
+                result[0] = num1;
+                result[1] = num2;
+            }
+        }
+        return result;
+    }
+    //Brute force method O(N*N) time complexity
     public static int[] smallestPair(int[] arr1, int[] arr2){
         int diff = Integer.MAX_VALUE;
         int i1 =-1;
@@ -57,7 +85,8 @@ public class SmallestDifference {
     public static int[] smallestDifference(int[] arr1, int[] arr2){
         int diff = Integer.MAX_VALUE;
         int[] result = new int[2];
-        Arrays.sort(arr1);
+        //Arrays.sort(arr1);
+        //Sorting of second array is enough
         Arrays.sort(arr2);
 
         for(int i=0; i< arr1.length; i++){

@@ -6,6 +6,7 @@ import java.util.*;
 
 public class Problem13 {
 
+//    This takes O(n * k) time and O(k) space.
     public static String longestSubstring(String str, int k){
         int startIndex = 0;
         int endIndex = 0;
